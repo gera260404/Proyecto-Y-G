@@ -6,89 +6,150 @@
   <title>Nuestro Amor Y & G</title>
   <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      
-      overflow-x: hidden;
-    }
+    <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+  }
 
-    body {
-      font-family: "Leckerli One", cursive;
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
-      color: black;
-      text-align: center;
-      padding: 50px;
-      position: relative;
-      z-index: 1;
-    }
+  body {
+    font-family: "Leckerli One", cursive;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: black;
+    text-align: center;
+    padding: 50px;
+    position: relative;
+    z-index: 1;
+  }
 
-    canvas#heartCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
+  canvas#heartCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
 
-    h1, p, #counter, .image-gallery {
-      position: relative;
-      z-index: 1;
-    }
+  h1, p, #counter, .video-section, .marquee {
+    position: relative;
+    z-index: 1;
+  }
 
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.3em;
-    }
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.3em;
+  }
 
-    p {
-      font-size: 1.5em;
-    }
+  p {
+    font-size: 1.5em;
+  }
 
-    #counter {
-      font-size: 2em;
-      margin-top: 30px;
-      background: rgba(255, 255, 255, 0.2);
-      padding: 20px;
-      border-radius: 20px;
-      display: inline-block;
-      color: black;
-    }
+  #counter {
+    font-size: 2em;
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 20px;
+    display: inline-block;
+    color: black;
+  }
 
-    .image-gallery {
-      margin-top: 40px;
-      margin-bottom: 100px;
-    }
+  .video-section {
+    margin-top: 40px;
+  }
 
-    .image-gallery img {
-      width: 300px;
-      height: auto;
-      margin: 10px;
-      border-radius: 20px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    }
+  video {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+
+  /* 💫 Marquesina sin retraso y más lenta */
+  .marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    margin-top: 60px;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 75s linear infinite; /* más lenta (antes era 25s) */
+  }
+
+  /* Clon para continuidad */
+  .marquee-content::after {
+    content: attr(data-dup);
+  }
+
+  .marquee img {
+    width: 200px;
+    height: auto;
+    margin: 0 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .marquee img:hover {
+    transform: scale(1.1);
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
+
   </style>
+  
 </head>
 <body>
   <canvas id="heartCanvas"></canvas>
 
   <h1>Yamileth y Gerardo</h1>
-  <p>Tenerte en mi vida es una de las cosas más maravillosas que me ha pasado <br> Saber que tengo la suerte de recibir tu amor me hace la persona más feliz del mundo <br>TE AMO 💖</p>
-  <p> <br>
-    <br>Este es el tiempo que llevamos juntos:</p>
+  <p>Tenerte en mi vida es una de las cosas más maravillosas que me ha pasado <br>
+     Saber que tengo la suerte de recibir tu amor me hace la persona más feliz del mundo <br>
+     TE AMO 💖</p>
+  <p><br><br>Este es el tiempo que llevamos juntos:</p>
+  <p><br>26/04/2025</p>
   <div id="counter">Cargando...</div>
 
-  <div class="image-gallery">
-    <img src="bym.jpg" alt="Imagen 1">
-    <img src="y2.jpg" alt="Imagen 2">
+  <!-- 🌈 Marquesina 1 (carpeta1) -->
+  <div class="marquee">
+    <div class="marquee-content" id="marquee1"></div>
+  </div>
+
+  <!-- 🌹 Sección de video -->
+  <div class="video-section">
+    <p>Nuestro Video 💞</p>
+    <video controls autoplay muted loop>
+      <source src="video1.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+  <br>
+  <p>Yamileth y Dayleth significan mucho para mi</p>
+  <p>Las amo mucho</p>
+
+  <!-- 🌈 Marquesina 2 (carpeta2) -->
+  <div class="marquee">
+    <div class="marquee-content" id="marquee2"></div>
   </div>
 
   <script>
     // Contador
-    const startDate = new Date(2025, 5, 30, 19, 0, 0);
+    const startDate = new Date(2025, 3, 26, 19, 0, 0);
     function updateCounter() {
       const now = new Date();
       let years = now.getFullYear() - startDate.getFullYear();
@@ -115,10 +176,21 @@
     setInterval(updateCounter, 1000);
     updateCounter();
 
-    // Corazones animados
+    // 💞 Función para crear imágenes aleatorias
+    function generateRandomImages(folder, totalImages, count) {
+      const numbers = Array.from({ length: totalImages }, (_, i) => i + 1);
+      numbers.sort(() => Math.random() - 0.5); // mezcla aleatoria
+      const selected = numbers.slice(0, count);
+      return selected.map(num => `<img src="${folder}/img${num}.jpg" alt="Recuerdo ${num}">`).join('');
+    }
+
+    // 💖 Inserta imágenes aleatorias en cada marquesina
+    document.getElementById("marquee1").innerHTML = generateRandomImages("carpeta1", 36, 36);
+    document.getElementById("marquee2").innerHTML = generateRandomImages("carpeta2", 64, 36);
+
+    // 💗 Corazones animados
     const canvas = document.getElementById("heartCanvas");
     const ctx = canvas.getContext("2d");
-
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
 
@@ -128,13 +200,12 @@
     });
 
     const hearts = [];
-
     function createHeart() {
       return {
         x: Math.random() * width,
         y: -20,
         size: 10 + Math.random() * 20,
-        speed: 0.2 + Math.random() * 0.2, // ✅ más lento
+        speed: 0.2 + Math.random() * 0.2,
         alpha: 0.4 + Math.random() * 0.3,
         angle: Math.random() * Math.PI * 2
       };
@@ -160,8 +231,6 @@
 
     function animate() {
       ctx.clearRect(0, 0, width, height);
-      
-      //menos corazones generados
       if (Math.random() < 0.010) {
         hearts.push(createHeart());
       }
